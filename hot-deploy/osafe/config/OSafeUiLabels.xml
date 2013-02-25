@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><!--
+<?xml version="1.0" encoding="UTF-8"?><!--
         To add HTML to a message escape all angle brackets < > in tags with  &lt; = < &gt = >
         Then where you use the message in ftl use the following ${StringUtil.wrapString([message])}
     --><resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -7,7 +7,7 @@
     </property>
     <!-- *** Caption *************************************** -->
     <property key="ListPriceCaption">
-        <value xml:lang="en"> </value>
+        <value xml:lang="en">List Price:</value>
         <category>PDP</category>
         <description>ListPriceCaption</description>
     </property>
@@ -227,30 +227,10 @@
         <category>MY_ACCOUNT</category>
         <description>GenderCaption</description>
     </property>
-     <property key="TitleCaption">
+    <property key="TitleCaption">
         <value xml:lang="en">Title:</value>
         <category>MY_ACCOUNT</category>
         <description>TitleCaption</description>
-    </property>
-    <property key="DOB_Caption">
-        <value xml:lang="en">Date Of Birth:</value>
-        <category>MY_ACCOUNT</category>
-        <description>DOBCaption</description>
-    </property>
-    <property key="DOB_Month">
-        <value xml:lang="en">Month</value>
-        <category>MY_ACCOUNT</category>
-        <description>DOBMonthCaption</description>
-    </property>
-    <property key="DOB_Day">
-        <value xml:lang="en">Day</value>
-        <category>MY_ACCOUNT</category>
-        <description>DOBDayCaption</description>
-    </property>
-    <property key="DOB_Year">
-        <value xml:lang="en">Year</value>
-        <category>MY_ACCOUNT</category>
-        <description>DOBYearCaption</description>
     </property>
     <property key="CountryCaption">
         <value xml:lang="en">Country:</value>
@@ -266,6 +246,31 @@
         <value xml:lang="en">Address 2:</value>
         <category>MY_ACCOUNT</category>
         <description>AddressLine2Caption</description>
+    </property>
+    <property key="ValidDobDateError">
+        <value xml:lang="en">Please Enter a Valid Date.</value>
+        <category>MESSAGE_ERROR</category>
+        <description>ValidDobDateError</description>
+    </property>
+    <property key="DOB_Caption">
+        <value xml:lang="en">Date Of Birth:</value>
+        <category>MY_ACCOUNT</category>
+        <description>DOBCaption</description>
+    </property>
+    <property key="DOB_Month">
+        <value xml:lang="en">Month</value>
+        <category>MY_ACCOUNT</category>
+        <description>DOBMOnthCaption</description>
+    </property>
+    <property key="DOB_Day">
+        <value xml:lang="en">Day</value>
+        <category>MY_ACCOUNT</category>
+        <description>DOBDayCaption</description>
+    </property>
+    <property key="DOB_Year">
+        <value xml:lang="en">Year</value>
+        <category>MY_ACCOUNT</category>
+        <description>DOBYearCaption</description>
     </property>
     <property key="AddressLine3Caption">
         <value xml:lang="en">Address 3:</value>
@@ -438,19 +443,9 @@
         <description>OverallRatingCaption</description>
     </property>
     <property key="YourNickNameCaption">
-        <value xml:lang="en">Your Nickname:</value>
+        <value xml:lang="en">Nickname:</value>
         <category>RATING_REVIEW</category>
         <description>YourNickNameCaption</description>
-    </property>
-    <property key="ReadLabel">
-        <value xml:lang="en">Read</value>
-        <category>RATING_REVIEW</category>
-        <description>ReadReviewLabel</description>
-    </property>
-    <property key="ReviewsLabel">
-        <value xml:lang="en">Review(s)</value>
-        <category>RATING_REVIEW</category>
-        <description>ReadReviewLabel</description>
     </property>
     <property key="ReviewTitleCaption">
         <value xml:lang="en">Review Title:</value>
@@ -613,11 +608,6 @@
         <category>ORDER_STATUS</category>
         <description>InStockLabel</description>
     </property>
-    <property key="LowStockLabel">
-        <value xml:lang="en">In Stock</value>
-        <category>ORDER_STATUS</category>
-        <description>LowStockLabel</description>
-    </property>
     <property key="OutOfStockLabel">
         <value xml:lang="en">Out Of Stock</value>
         <category>PDP</category>
@@ -628,7 +618,7 @@
         <category>PLP</category>
         <description>PlpPriceLabel</description>
     </property>
-
+    
     <property key="PlpListPriceLabel">
         <value xml:lang="en">List Price</value>
         <category>PLP</category>
@@ -744,21 +734,21 @@
         <category>ORDER_STATUS</category>
         <description>ShippingAddressLabel</description>
     </property>
-    <property key="ShippingAndHandlingLabel">
-        <value xml:lang="en">Shipping and Handling</value>
-        <category>ORDER_STATUS</category>
-        <description>ShippingAndHandlingLabel</description>
-    </property>
     <property key="ShippingAddressDefaultNickNameLabel">
         <value xml:lang="en">Home</value>
         <category>MY_ACCOUNT</category>
         <description>ShippingAddressDefaultNickNameLabel</description>
     </property>
+    <property key="ShippingAndHandlingLabel">
+        <value xml:lang="en">Shipping and Handling</value>
+        <category>ORDER_STATUS</category>
+        <description>ShippingAndHandlingLabel</description>
+    </property>
     <property key="TaxLabel">
         <value xml:lang="en">Tax</value>
         <category>ORDER_STATUS</category>
         <description>TaxLabel</description>
-    </property>
+    </property>    
     <property key="OrderStatusChangeMessage">
         <value xml:lang="en">The status of the below order is now </value>
         <category>ORDER_STATUS</category>
@@ -770,17 +760,17 @@
         <description>OverallRatingLabel</description>
     </property>
     <property key="QualityLabel">
-        <value xml:lang="en">Quality</value>
+        <value xml:lang="en">Quality:</value>
         <category>RATING_REVIEW</category>
         <description>QualityLabel</description>
     </property>
     <property key="SatisfactionLabel">
-        <value xml:lang="en">Satisfaction</value>
+        <value xml:lang="en">Satisfaction:</value>
         <category>RATING_REVIEW</category>
         <description>SatisfactionLabel</description>
     </property>
     <property key="EffectivenessLabel">
-        <value xml:lang="en">Effectiveness</value>
+        <value xml:lang="en">Effectiveness:</value>
         <category>RATING_REVIEW</category>
         <description>EffectivenessLabel</description>
     </property>
@@ -859,6 +849,25 @@
         <category>RATING_REVIEW</category>
         <description>ReadReviewLabel</description>
     </property>
+
+    <property key="ReadLabel">
+
+        <value xml:lang="en">Read</value>
+
+        <category>RATING_REVIEW</category>
+
+        <description>ReadReviewLabel</description>
+
+    </property>
+    <property key="ReviewsLabel">
+
+        <value xml:lang="en">Review(s)</value>
+
+        <category>RATING_REVIEW</category>
+
+        <description>ReadReviewLabel</description>
+
+    </property>
     <property key="WriteReviewLabel">
         <value xml:lang="en">Write a Review</value>
         <category>RATING_REVIEW</category>
@@ -926,7 +935,7 @@
         <description>Solicitation checkbox</description>
     </property>
     <property key="EnterPromoCodeLabel">
-        <value xml:lang="en">If you have an "Coupon" code, please enter it here:</value>
+        <value xml:lang="en">Coupon Code:</value>
         <category>CHECK_OUT</category>
         <description>Enter offer code</description>
     </property>
@@ -1180,29 +1189,29 @@
         <category>PDP</category>
         <description>PDP TAB Label</description>
     </property>
-    <property key="CartShippingMethodLabel">
+      <property key="CartShippingMethodLabel">
         <value xml:lang="en">Shipping Method:</value>
-        <category>CHECKOUT</category>
+        <category>CHECK_OUT</category>
         <description>Cart Shipping Method:</description>
     </property>
     <property key="CartShippingAndHandlingLabel">
-        <value xml:lang="en">Estimated Shipping:</value>
-        <category>CHECKOUT</category>
+        <value xml:lang="en">Shipping and Handling</value>
+        <category>CHECK_OUT</category>
         <description>Cart Shipping And Handling</description>
     </property>
     <property key="CartAdjustedTotalLabel">
         <value xml:lang="en">Adjusted Total:</value>
-        <category>CHECKOUT</category>
+        <category>CHECK_OUT</category>
         <description>Cart Adjusted Total</description>
     </property>
     <property key="CartTaxLabel">
         <value xml:lang="en">Estimated Tax:</value>
-        <category>CHECKOUT</category>
+        <category>CHECK_OUT</category>
         <description>Cart Estimated Tax</description>
     </property>
     <property key="CartTotalLabel">
         <value xml:lang="en">Total:</value>
-        <category>CHECKOUT</category>
+        <category>CHECK_OUT</category>
         <description>Cart Total </description>
     </property> 
     <!-- **** Page Title *************************************** -->
@@ -1235,11 +1244,6 @@
         <value xml:lang="en">My Cart</value>
         <category>PAGE_HEADING_H1</category>
         <description>ShoppingCartTitle</description>
-    </property>
-    <property key="WishListTitle">
-        <value xml:lang="en">Wish List</value>
-        <category>PAGE_HEADING_H1</category>
-        <description>WishListTitle</description>
     </property>
     <property key="ShippingAddressTitle">
         <value xml:lang="en">Shipping Address</value>
@@ -1365,21 +1369,6 @@
         <value xml:lang="en">Abandon Cart Notification</value>
         <category>PAGE_HEADING_H1</category>
         <description>AbandonCartEmailTitle</description>
-    </property>
-    <property key="PageTitleOrderConfirmationNotice">
-        <value xml:lang="en">Order Confirmation Notification</value>
-        <category>PAGE_HEADING_H1</category>
-        <description>PageTitleOrderConfirmationNotice</description>
-    </property>
-    <property key="PageTitleOrderChangeNotice">
-        <value xml:lang="en">Order Change Notification</value>
-        <category>PAGE_HEADING_H1</category>
-        <description>PageTitleOrderChangeNotice</description>
-    </property>
-    <property key="PageTitleOrderCompleteNotice">
-        <value xml:lang="en">Order Complete Notification</value>
-        <category>PAGE_HEADING_H1</category>
-        <description>PageTitleOrderCompleteNotice</description>
     </property>
     <property key="ShipReviewEmailTitle">
         <value xml:lang="en">Product Review Notification</value>
@@ -1703,7 +1692,7 @@
         <description>PDPWarningsHeading</description>
     </property>
     <property key="ContactUsHeading">
-        <value xml:lang="en">Contact Us</value>
+        <value xml:lang="en">Please fill out the form below</value>
         <category>PAGE_SUB_HEADING</category>
         <description>ContactUsHeading</description>
     </property>
@@ -1900,7 +1889,7 @@
         <description>RequestCatalogTitle</description>
     </property>
     <property key="SelectAddressCaption">
-        <value xml:lang="en">Select from Address Book:</value>
+        <value xml:lang="en">Choose Address:</value>
         <category>MESSAGE_INFO</category>
         <description>SelectAddressCaption</description>
     </property>
@@ -2017,7 +2006,7 @@
         <description>LocationExampleInfo</description>
     </property>
     <property key="NicknameExampleInfo">
-        <value xml:lang="en">For your privacy, we suggest using a nickname instead of your real name.</value>
+        <value xml:lang="en">For your privacy, we suggest using a nickname.</value>
         <category>RATING_REVIEW</category>
         <description>NicknameExampleInfo</description>
     </property>
@@ -2043,7 +2032,7 @@
         <description>SystemGeneratedEmailInfo</description>
     </property>
     <property key="ThankYouForShoppingEmailInfo">
-        <value xml:lang="en">Thank you for shopping with Up and Runway, below is a confirmation of your order.</value>
+        <value xml:lang="en">Thank you for shopping with Fashion House, below is a confirmation of your order.</value>
         <category>MESSAGE_EMAIL</category>
         <description>ThankYouForShoppingEmailInfo</description>
     </property>
@@ -2067,11 +2056,6 @@
         <value xml:lang="en">Your Shopping Cart is empty</value>
         <category>CHECK_OUT</category>
         <description>YourShoppingCartIsEmptyInfo</description>
-    </property>
-    <property key="YourWishListIsEmptyInfo">
-        <value xml:lang="en">Your Wish List is empty</value>
-        <category>CHECK_OUT</category>
-        <description>YourWishListIsEmptyInfo</description>
     </property>
     <property key="EnterOfferCodeInfo">
         <value xml:lang="en">Your shopping cart currently contains n item(s), if you have an "Offer" code, please enter it here:</value>
@@ -2170,6 +2154,7 @@
         <category>MESSAGE_SUCCESS</category>
         <description>ForgotPasswordEmailedSuccess</description>
     </property>
+
     <!-- ******* Error Messages *************************************** -->
     <property key="AddressVerificationError">
         <value xml:lang="en">Your Address is incorrect, please verify. If the address is correct, then check the "Use As Entered" checkbox and continue</value>
@@ -2180,11 +2165,6 @@
         <value xml:lang="en">You are not allowed to view this page.</value>
         <category>MESSAGE_ERROR</category>
         <description>eCommerceViewPermissionError</description>
-    </property>
-    <property key="ValidDobDateError">
-        <value xml:lang="en">Please Enter a Valid Date.</value>
-        <category>MESSAGE_ERROR</category>
-        <description>ValidDobDateError</description>
     </property>
     <property key="ContactReasonMissingError">
         <value xml:lang="en">o	Please select a Reason for Contact. This allows us to better serve you.</value>
@@ -2557,7 +2537,7 @@
         <description>AddressIncompleteError</description>
     </property>
     <property key="SalesTaxLabel">
-        <value xml:lang="en">Sales Tax</value>
+        <value xml:lang="en">Estimated Tax</value>
         <category>ORDER_STATUS</category>
         <description>SalesTaxLabel</description>
     </property>
@@ -2816,7 +2796,7 @@
         <description>Confirm Catalog Request Sub Title</description>
     </property>
     <property key="ConfirmTextRequestCatalog">
-        <value xml:lang="en">Your catalog request will be processed immediately. Thank you for your interest in companyName Products, we appreciate your business!</value>
+        <value xml:lang="en">Your catalog request will be processed immediately. Thank you for your interest in Fashion House Products, we appreciate your business!</value>
         <category>CONFIRM</category>
         <description>Confirm Catalog Request Text</description>
     </property>
@@ -2831,7 +2811,7 @@
         <description>Confirm Mailing List Sub Title</description>
     </property>
     <property key="ConfirmTextMailingList">
-        <value xml:lang="en">You have signed-up for our mailing list. We will be sending you special offers via email. Thank you for your interest in companyName Products, we appreciate your business!</value>
+        <value xml:lang="en">You have signed-up for our mailing list. We will be sending you special offers via email. Thank you for your interest in Fashion House Products, we appreciate your business!</value>
         <category>CONFIRM</category>
         <description>Confirm Mailing List Text</description>
     </property>
@@ -2846,7 +2826,7 @@
         <description>Confirm Contact Us Sub Title</description>
     </property>
     <property key="ConfirmTextContactUs">
-        <value xml:lang="en">Your comments have been received. We will respond to any business query within 2-3 business days. Thank you for your interest in companyName, we appreciate your business!</value>
+        <value xml:lang="en">Your comments have been received. We will respond to any business query within 2-3 business days. Thank you for your interest in Fashion House, we appreciate your business!</value>
         <category>CONFIRM</category>
         <description>Confirm Contact Us Text</description>
     </property>

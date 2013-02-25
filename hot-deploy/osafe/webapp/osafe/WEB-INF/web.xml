@@ -23,7 +23,7 @@
     </context-param>
     <context-param>
         <param-name>eCommerceDecoratorName</param-name>
-        <param-value>ecommerce-basic-bevel-decorator</param-value>
+        <param-value>ecommerce-basic-decorator</param-value>
         <description>The name of the eCommerce-Decorator screen to use for this webapp; referred to as a context variable in screen def XML files.</description>
     </context-param>
     <context-param>

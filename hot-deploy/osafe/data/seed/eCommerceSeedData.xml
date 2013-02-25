@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+
+    <!-- OFBiz Core security -->
+
+
+    <Party partyId="_NA_" partyTypeId="PERSON"/>
+    <Person partyId="_NA_"/>
+    <PartyRole partyId="_NA_" roleTypeId="CARRIER"/>
+    <PartyRole partyId="_NA_" roleTypeId="_NA_"/>
+
+    <!-- Create the administration party and user login entities -->
+    <Party partyId="admin"/>
+    <PartyRole partyId="admin" roleTypeId="_NA_"/>
+    <PartyRole partyId="admin" roleTypeId="SALES_REP"/>
+    <PartyRole partyId="admin" roleTypeId="OWNER"/>
+    <UserLogin userLoginId="admin" currentPassword="{SHA}47ca69ebb4bdc9ae0adec130880165d2cc05db1a" requirePasswordChange="N" partyId="admin"/>
+    <UserLoginSecurityGroup groupId="FULLADMIN" userLoginId="admin" fromDate="2001-01-01 00:00:00.0"/>
+    <UserPreference userLoginId="admin" userPrefGroupTypeId="GLOBAL_PREFERENCES" userPrefTypeId="javaScriptEnabled" userPrefValue="Y"/>
+    <UserPreference userLoginId="admin" userPrefGroupTypeId="GLOBAL_PREFERENCES" userPrefTypeId="VISUAL_THEME" userPrefValue="FLAT_GREY"/>
+    <UserPreference userLoginId="_NA_" userPrefGroupTypeId="GLOBAL_PREFERENCES" userPrefTypeId="ORGANIZATION_PARTY" userPrefValue="DEFAULT"/>
+    <UserPreference userLoginId="_NA_" userPrefGroupTypeId="GLOBAL_PREFERENCES" userPrefTypeId="VISUAL_THEME" userPrefValue="FLAT_GREY"/>
+
+    <!-- PRODUCT STORE EMAIL SETTING (emailType) -->
+    <Enumeration enumId="CONTI_NOTI_EMAIL" enumTypeId="PARTY_EMAIL" description="Contact-Us Notification" enumCode="CONT_EMAIL" sequenceId="05"/>
+    <Enumeration enumId="REQCAT_NOTI_EMAIL" enumTypeId="PARTY_EMAIL" description="Request Catalog Notification" enumCode="REQCAT_EMAIL" sequenceId="06"/>
+    <Enumeration enumId="ABCART_EMAIL" enumTypeId="PARTY_EMAIL" description="Abandon Cart Notification" enumCode="ABCART_EMAIL" sequenceId="07"/>
+    <Enumeration enumId="SHIPREVIEW_EMAIL" enumTypeId="PARTY_EMAIL" description="Send email for product review after day ? shipped" enumCode="SHIPREVIEW_EMAIL" sequenceId="08"/>
+    <Enumeration enumId="PRDS_ABD_CART" enumTypeId="PRDS_EMAIL" description="Abandon Cart Email" enumCode="ABD_CART"  sequenceId="27"/>
+    <Enumeration enumId="PRDS_SHIP_REVIEW" enumTypeId="PRDS_EMAIL" description="Ship Review Email" enumCode="SHIP_REVIEW"  sequenceId="28"/>
+    <Enumeration enumId="PRDS_EMAIL_TEST" enumTypeId="PRDS_EMAIL" description="Test Email" enumCode="EMAIL_TEST"  sequenceId="29"/>
+    <Enumeration enumId="PRDS_MAILING_LIST" enumTypeId="PRDS_EMAIL" description="Mailing List Subscription" enumCode="MAILING_LIST"  sequenceId="30"/>
+    <Enumeration enumId="PRDS_SCHED_JOB_ALERT" enumTypeId="PRDS_EMAIL" description="Scheduled Job Notification" enumCode="SCHED_JOB"  sequenceId="31"/>
+
+    <!-- CONTACT US REASON -->
+    <Enumeration enumId="CR_ORDER_INQUIRY" enumTypeId="CONTACT_US_REASON" description="Order Inquiry" enumCode="CR_ORDER_INQUIRY" sequenceId="01"/>
+    <Enumeration enumId="CR_CUSTOMER_SERVICE" enumTypeId="CONTACT_US_REASON" description="Customer Service" enumCode="CR_CUSTOMER_SERVICE" sequenceId="02"/>
+    <Enumeration enumId="CR_BILLING_INQUIRY" enumTypeId="CONTACT_US_REASON" description="Billing Inquiry" enumCode="CR_BILLING_INQUIRY" sequenceId="03"/>
+    <Enumeration enumId="CR_DELIVERY_QUESTION" enumTypeId="CONTACT_US_REASON" description="Delivery Question" enumCode="CR_DELIVERY_QUESTION" sequenceId="04"/>
+    <Enumeration enumId="CR_PROD_INFORMATION" enumTypeId="CONTACT_US_REASON" description="Product Information" enumCode="CR_PROD_INFORMATION" sequenceId="05"/>
+    <Enumeration enumId="CR_SUGGESTIONS" enumTypeId="CONTACT_US_REASON" description="Suggestions" enumCode="CR_SUGGESTIONS" sequenceId="06"/>
+    <Enumeration enumId="CR_OTHER" enumTypeId="CONTACT_US_REASON" description="Other" enumCode="CR_OTHER" sequenceId="07"/>
+
+    <!-- PERSONAL TITLE -->
+    <Enumeration enumId="PT_MR" enumTypeId="PERSONAL_TITLE" description="Mr" enumCode="PT_MR" sequenceId="01"/>
+    <Enumeration enumId="PT_MRS" enumTypeId="PERSONAL_TITLE" description="Mrs" enumCode="PT_MRS" sequenceId="02"/>
+    <Enumeration enumId="PT_MISS" enumTypeId="PERSONAL_TITLE" description="Miss" enumCode="PT_MISS" sequenceId="03"/>
+	
+	<!-- REVIEW AGES -->
+    <Enumeration enumId="RA_0_TO_10" enumTypeId="REVIEW_AGE" description="0 - 10" enumCode="RA_0_TO_10" sequenceId="01"/>
+    <Enumeration enumId="RA_11_TO_20" enumTypeId="REVIEW_AGE" description="11 - 20" enumCode="RA_11_TO_20" sequenceId="02"/>
+    <Enumeration enumId="RA_21_TO_30" enumTypeId="REVIEW_AGE" description="21 - 30" enumCode="RA_21_TO_30" sequenceId="03"/>
+    <Enumeration enumId="RA_31_TO_40" enumTypeId="REVIEW_AGE" description="31 - 40" enumCode="RA_31_TO_40" sequenceId="04"/>
+    <Enumeration enumId="RA_41_TO_50" enumTypeId="REVIEW_AGE" description="41 - 50" enumCode="RA_41_TO_50" sequenceId="05"/>
+    <Enumeration enumId="RA_51_TO_60" enumTypeId="REVIEW_AGE" description="51 - 60" enumCode="RA_51_TO_60" sequenceId="06"/>
+    <Enumeration enumId="RA_61_AND_OLDER" enumTypeId="REVIEW_AGE" description="61 and older" enumCode="RA_61_AND_OLDER" sequenceId="07"/>
+
+
+    <!-- CONTENT STATUS DESCRIPTIONS -->
+    <StatusItem statusId="CTNT_INITIAL_DRAFT" description="Initial Draft"/>
+    <StatusItem statusId="CTNT_IN_PROGRESS" description="Pending"/>
+    <StatusItem statusId="CTNT_REVISED_DRAFT" description="Revised Draft"/>
+    <StatusItem statusId="CTNT_FINAL_DRAFT" description="Final Draft"/>
+    <StatusItem statusId="CTNT_PUBLISHED" description="Active"/>
+    <StatusItem statusId="CTNT_AVAILABLE" description="Available"/>
+    <StatusItem statusId="CTNT_DEACTIVATED" description="Inactive"/>
+
+    <!-- Payment Gateway Config -->
+    <PaymentGatewayConfig paymentGatewayConfigId="SAGEPAYTOKEN_CONFIG" paymentGatewayConfigTypeId="SAGEPAYTOKEN" description="SagePay Token Config"/>
+    <PaymentGatewaySagePayToken paymentGatewayConfigId="SAGEPAYTOKEN_CONFIG" vendor="YOUR VENDOR NAME" productionHost="https://live.sagepay.com:443" testingHost="https://test.sagepay.com:443" sagePayMode="TEST" protocolVersion="2.23" authenticationTransType="DEFERRED" authenticationUrl="/gateway/service/vspdirect-register.vsp" authoriseTransType="RELEASE" authoriseUrl="/gateway/service/vspdirect-register.vsp" releaseTransType="RELEASE" releaseUrl="/gateway/service/vspdirect-register.vsp" voidTransType="VOID" voidUrl="/gateway/service/vspdirect-register.vsp" refundTransType="REFUND" refundUrl="/gateway/service/vspdirect-register.vsp" registrationTransType="TOKEN" registrationUrl="/gateway/service/directtoken.vsp" storeToken="0"/>
+
+    <!-- Payment Custom Method -->
+    <CustomMethod customMethodId="CC_AUTH_SGPAYTKN" customMethodTypeId="CC_AUTH" customMethodName="sagepaytokenCCAuth" description="SagePay token authorize"/>
+    <CustomMethod customMethodId="CC_CAPTURE_SGPAYTKN" customMethodTypeId="CC_CAPTURE" customMethodName="sagepaytokenCCCapture" description="SagePay token capture"/>
+    <CustomMethod customMethodId="CC_REFUND_SGPAYTKN" customMethodTypeId="CC_REFUND" customMethodName="sagepaytokenCCRefund" description="SagePay token refund"/>
+    <CustomMethod customMethodId="CC_RELEASE_SGPAYTKN" customMethodTypeId="CC_RELEASE" customMethodName="sagepaytokenCCRelease" description="SagePay token release"/>
+
+
+</entity-engine-xml>

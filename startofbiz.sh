@@ -24,6 +24,8 @@ ADMIN_KEY=so3du5kasd5dn
 
 # console log file
 OFBIZ_LOG=runtime/logs/console.log
+#TITLE
+TITLE="OfBiz Big Fish"
 
 # delete the last log
 rm -f $OFBIZ_LOG
@@ -35,9 +37,12 @@ ADMIN="-Dofbiz.admin.port=$ADMIN_PORT -Dofbiz.admin.key=$ADMIN_KEY"
 #automatic IP address for linux
 #IPADDR=`/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`
 #RMIIF="-Djava.rmi.server.hostname=$IPADDR"
-MEMIF="-Xms128M -Xmx512M -XX:MaxPermSize=128m"
+MEMIF="-Xms512M -Xmx512M -XX:MaxPermSize=128m"
+#JMX="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=33333 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
 #MISC="-Duser.language=en"
-VMARGS="$MEMIF $MISC $DEBUG $RMIIF $ADMIN"
+SOLRDATA="-Dsolr.data.dir=/home/cuong/work/workspace/OpenERP/ofbizGithub/hot-deploy/solr/data"
+SOLRPARMS="-Dsolr.solr.home=/home/cuong/work/workspace/OpenERP/ofbizGithub/hot-deploy/solr $SOLRDATA"
+VMARGS="$MEMIF $MISC $JMX $DEBUG $RMIIF $ADMIN"
 
 # Worldpay Config
 #VMARGS="-Xbootclasspath/p:applications/accounting/lib/cryptix.jar $VMARGS"
@@ -49,7 +54,9 @@ else
   JAVA=java
 fi
 
+# Allows to run from Jenkins. See http://wiki.jenkins-ci.org/display/JENKINS/ProcessTreeKiller. Cons: the calling Jenkins job does not terminate if the log is not enabled, pros: this allows to monitor the log in Jenkins
+#BUILD_ID=dontKillMe
+
 # start ofbiz
 #$JAVA $VMARGS -jar ofbiz.jar $* >>$OFBIZ_LOG 2>>$OFBIZ_LOG&
-exec "$JAVA" $VMARGS -jar ofbiz.jar "$@"
-
+exec "$JAVA" $VMARGS $SOLRPARMS -jar ofbiz.jar "$@"

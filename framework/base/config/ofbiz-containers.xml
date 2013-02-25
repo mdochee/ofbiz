@@ -22,7 +22,6 @@ under the License.
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-containers.xsd">
     <!-- load the ofbiz component container (always first) -->
     <container name="component-container" class="org.ofbiz.base.container.ComponentContainer"/>
-    
 
     <!-- load the cached classloader container (always second) -->
     <container name="classloader-container" class="org.ofbiz.base.container.ClassLoaderContainer"/>
@@ -36,14 +35,14 @@ under the License.
     <!-- load the naming (JNDI) server -->
     <container name="naming-container" class="org.ofbiz.base.container.NamingServiceContainer">
         <property name="host" value="0.0.0.0"/>
-        <property name="port" value="1099"/>
+        <property name="port" value="1092"/>
     </container>
 
     <!-- RMI Service Dispatcher -->
     <container name="rmi-dispatcher" class="org.ofbiz.service.rmi.RmiServiceContainer">
         <property name="bound-name" value="RMIDispatcher"/>
         <property name="bound-host" value="127.0.0.1"/>
-        <property name="bound-port" value="1099"/>
+        <property name="bound-port" value="1092"/>
         <property name="delegator-name" value="default"/>
         <property name="client-factory" value="org.ofbiz.service.rmi.socket.ssl.SSLClientSocketFactory"/>
         <property name="server-factory" value="org.ofbiz.service.rmi.socket.ssl.SSLServerSocketFactory"/>
@@ -56,9 +55,7 @@ under the License.
 
     <!-- JavaMail Listener Container - Triggers MCA Rules -->
     <!-- if delete-mail is set to true, will delete messages after fetching them. otherwise, will try to mark them as seen
-        mail.store.protocol supports both imap and pop3, but pop3 will not be able to mark messages as seen, so you would need to delete them
-        Sounds like mail.store.protocol value should be "imaps" for GMail inbound emails to work.
-        Not tested found here https://sourceforge.net/forum/message.php?msg_id=5879468 -->
+        mail.store.protocol supports both imap and pop3, but pop3 will not be able to mark messages as seen, so you would need to delete them-->
     <!-- To use the mail listerner just uncomment and go...
     <container name="javamail-container" class="org.ofbiz.service.mail.JavaMailContainer">
         <property name="delegator-name" value="default"/>
@@ -90,6 +87,14 @@ under the License.
     </container>
     -->
 
+    <!-- Load embedded Jackrabbit content repository. Since this container depends
+         upon JNDI, it must be started after the naming-container container.-->
+		 <!--
+    <container name="jcr-container" class="org.ofbiz.jcr.loader.JCRContainer">
+        <property name="configFilePath" value="framework/jcr/config/jcr-config.xml"/>
+        <property name="removeOnShutdown" value="false"/>
+    </container -->
+
     <!-- load catalina (tomcat) and all web applications -->
     <container name="catalina-container" class="org.ofbiz.catalina.container.CatalinaContainer">
         <!-- static configuration for tomcat -->
@@ -111,11 +116,10 @@ under the License.
             <property name="access-log-rotate" value="true"/>
             <property name="access-log-prefix" value="access_log."/>
             <property name="access-log-dir" value="runtime/logs"/>
-            <property name="enable-request-dump" value="false"/>
             <!-- uncomment for cluster support
             <property name="default-server-cluster" value="cluster">
                 <property name="rep-valve-filter">
-                    <property-value>.*\.gif;.*\.js;.*\.jpg;.*\.htm;.*\.html;.*\.txt;</property-value>
+                <property-value>.*\.gif;.*\.js;.*\.jpg;.*\.htm;.*\.html;.*\.txt;.*\.png;.*\.css;.*\.ico;.*\.htc;</property-value>
                 </property>
                 <property name="manager-class" value="org.apache.catalina.ha.session.DeltaManager"/>
                 <property name="debug" value="5"/>
@@ -154,9 +158,9 @@ under the License.
             <property name="address" value="0.0.0.0"/>
             <property name="backlog" value="10"/>
             <property name="maxSpareThreads" value="50"/>
-            <property name="maxThreads" value="200"/>
+            <property name="maxThreads" value="256"/>
             <property name="minSpareThreads" value="4"/>
-            <property name="port" value="8009"/>
+            <property name="port" value="8002"/>
             <property name="tcpNoDelay" value="true"/>
             <property name="soTimeout" value="60000"/>
             <property name="tomcatAuthentication" value="true"/>
@@ -251,19 +255,22 @@ under the License.
             <property name="ciphers" value=""/>
         </property>
     </container>
-    
+
     <!-- load the BIRT container -->
-    <container name="birt-container" class="org.ofbiz.birt.container.BirtContainer">
-        <property name="delegator-name" value="default"/>
-        <property name="dispatcher-name" value="birt-dispatcher"/>
-        <property name="delegator-group-helper-name" value="org.ofbiz"/>
-    </container>
+    <container name="birt-container" class="org.ofbiz.birt.container.BirtContainer"/>
 
     <!-- load BeanShell remote telnet server -->
     <!-- Commented out by default for security reasons -->
     <!-- the port below and port-1 will be opened by Beanshell -->
     <!--container name="beanshell-container" class="org.ofbiz.base.container.BeanShellContainer">
-        <property name="telnet-port" value="9990"/>
+        <property name="telnet-port" value="9992"/>
         <property name="app-name" value="OFBiz"/>
-        </container-->
+    </container-->
+
+    <!-- load Groovy remote telnet server -->
+    <!-- Commented out by default for security reasons -->
+    <!-- the port below will be opened by Groovy -->
+    <!--container name="groovyshell-container" class="org.ofbiz.base.container.GroovyShellContainer">
+        <property name="telnet-port" value="9992"/>
+    </container-->
 </ofbiz-containers>

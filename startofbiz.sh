@@ -46,7 +46,7 @@ VMARGS="$MEMIF $MISC $JMX $DEBUG $RMIIF $ADMIN"
 
 # Worldpay Config
 #VMARGS="-Xbootclasspath/p:applications/accounting/lib/cryptix.jar $VMARGS"
-
+export JAVA_HOME="/usr/java/jdk1.7.0_03"
 # location of java executable
 if [ -f "$JAVA_HOME/bin/java" ]; then
   JAVA="$JAVA_HOME/bin/java"

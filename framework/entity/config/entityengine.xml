@@ -448,8 +448,8 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <inline-jdbc
                 jdbc-driver="oracle.jdbc.driver.OracleDriver"
                 jdbc-uri="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-                jdbc-username="ofbiz"
-                jdbc-password="ofbiz"
+                jdbc-username="bigfish"
+                jdbc-password="bigfish"
                 pool-minsize="2"
                 pool-maxsize="250"
                 time-between-eviction-runs-millis="600000"/>
@@ -473,8 +473,8 @@ access. For a detailed description see the core/docs/entityconfig.html file.
 <inline-jdbc
                 jdbc-driver="oracle.jdbc.driver.OracleDriver"
                 jdbc-uri="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-                jdbc-username="ofbizolap"
-                jdbc-password="ofbizolap"
+                jdbc-username="bigfisholap"
+                jdbc-password="bigfisholap"
                 pool-minsize="2"
                 pool-maxsize="250"
                 time-between-eviction-runs-millis="600000"/>
@@ -498,8 +498,8 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <inline-jdbc
                 jdbc-driver="oracle.jdbc.driver.OracleDriver"
                 jdbc-uri="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-                jdbc-username="ofbiztenant"
-                jdbc-password="ofbiztenant"
+                jdbc-username="bigfishtenant"
+                jdbc-password="bigfishtenant"
                 pool-minsize="2"
                 pool-maxsize="250"
                 time-between-eviction-runs-millis="600000"/>

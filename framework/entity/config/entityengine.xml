@@ -627,7 +627,7 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <read-data reader-name="ext-demo"/>
         <inline-jdbc
                 jdbc-driver="oracle.jdbc.driver.OracleDriver"
-                jdbc-uri="jdbc:oracle:thin:@127.0.0.1:1521:ofbiz"
+                jdbc-uri="jdbc:oracle:thin:@127.0.0.1:1521:xe"
                 jdbc-username="ofbiz"
                 jdbc-password="ofbiz"
                 pool-minsize="2"

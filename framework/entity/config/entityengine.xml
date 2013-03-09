@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -441,10 +441,10 @@ access. For a detailed description see the core/docs/entityconfig.html file.
         <read-data reader-name="demo"/>
         <read-data reader-name="ext"/>
         <inline-jdbc
-                jdbc-driver="com.mysql.jdbc.Driver"
-                jdbc-uri="jdbc:oracle:thin:127.0.0.1:3306:bigfishdemo"
-                jdbc-username="bigfish"
-                jdbc-password="bigfish"
+                jdbc-driver="oracle.jdbc.driver.OracleDriver"
+                jdbc-uri="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+                jdbc-username="ofbiz"
+                jdbc-password="ofbiz"
                 pool-minsize="2"
                 pool-maxsize="250"
                 time-between-eviction-runs-millis="600000"/>

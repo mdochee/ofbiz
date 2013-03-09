@@ -55,9 +55,11 @@ access. For a detailed description see the core/docs/entityconfig.html file.
        <!-- <group-map group-name="org.ofbiz" datasource-name="localderby"/>
         <group-map group-name="org.ofbiz.olap" datasource-name="localderbyolap"/>
         <group-map group-name="org.ofbiz.tenant" datasource-name="localderbytenant"/>-->
-        <group-map group-name="org.ofbiz" datasource-name="localmysql"/>
-        <group-map group-name="org.ofbiz.olap" datasource-name="localmysqlolap"/>
-        <group-map group-name="org.ofbiz.tenant" datasource-name="localmysqltenant"/>  
+        <group-map group-name="org.ofbiz" datasource-name="localoracle"/>
+		<group-map group-name="org.ofbiz.olap" datasource-name="localoracleolap"/>
+		<group-map group-name="org.ofbiz.tenant" datasource-name="localoracletenant"/>
+        <!--<group-map group-name="org.ofbiz.olap" datasource-name="localmysqlolap"/>
+        <group-map group-name="org.ofbiz.tenant" datasource-name="localmysqltenant"/>-->  
         <!-- <group-map group-name="org.ofbiz" datasource-name="localpostnew"/>
         <group-map group-name="org.ofbiz.olap" datasource-name="localpostolap"/>
         <group-map group-name="org.ofbiz.tenant" datasource-name="localposttenant"/> -->
@@ -630,6 +632,56 @@ access. For a detailed description see the core/docs/entityconfig.html file.
                 jdbc-uri="jdbc:oracle:thin:@127.0.0.1:1521:xe"
                 jdbc-username="ofbiz"
                 jdbc-password="ofbiz"
+                pool-minsize="2"
+                pool-maxsize="250"
+                time-between-eviction-runs-millis="600000"/>
+    </datasource>
+ <datasource name="localoracleolap"
+            helper-class="org.ofbiz.entity.datasource.GenericHelperDAO"
+            schema-name="OFBIZ"
+            field-type-name="oracle"
+            check-on-start="true"
+            add-missing-on-start="true"
+            alias-view-columns="false"
+            join-style="ansi"
+            use-order-by-nulls="true">
+        <read-data reader-name="tenant"/>
+        <read-data reader-name="seed"/>
+        <read-data reader-name="seed-initial"/>
+        <read-data reader-name="demo"/>
+        <read-data reader-name="ext"/>
+        <read-data reader-name="ext-test"/>
+        <read-data reader-name="ext-demo"/>
+<inline-jdbc
+                jdbc-driver="oracle.jdbc.driver.OracleDriver"
+                jdbc-uri="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+                jdbc-username="ofbizolap"
+                jdbc-password="ofbizolap"
+                pool-minsize="2"
+                pool-maxsize="250"
+                time-between-eviction-runs-millis="600000"/>
+    </datasource>
+    <datasource name="localoracletenant"
+            helper-class="org.ofbiz.entity.datasource.GenericHelperDAO"
+            schema-name="OFBIZ"
+            field-type-name="oracle"
+            check-on-start="true"
+            add-missing-on-start="true"
+            alias-view-columns="false"
+            join-style="ansi"
+            use-order-by-nulls="true">
+        <read-data reader-name="tenant"/>
+        <read-data reader-name="seed"/>
+        <read-data reader-name="seed-initial"/>
+        <read-data reader-name="demo"/>
+        <read-data reader-name="ext"/>
+        <read-data reader-name="ext-test"/>
+        <read-data reader-name="ext-demo"/>
+        <inline-jdbc
+                jdbc-driver="oracle.jdbc.driver.OracleDriver"
+                jdbc-uri="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+                jdbc-username="ofbiztenant"
+                jdbc-password="ofbiztenant"
                 pool-minsize="2"
                 pool-maxsize="250"
                 time-between-eviction-runs-millis="600000"/>

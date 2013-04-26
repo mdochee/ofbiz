@@ -35,5 +35,6 @@ find_jar() {
         exit 1
     fi
 }
-"$JAVA" -jar "$(find_jar)" -lib "$top/framework/base/lib/ant" "$@"
+export JAVA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
+"$JAVA" $JAVA_OPTS -jar "$(find_jar)" -lib "$top/framework/base/lib/ant" "$@"
 
